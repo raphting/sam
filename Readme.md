@@ -4,7 +4,7 @@ This small software tries to solve exponential expressions modulo X in short tim
 
 Compile
 -------
-`gcc -Wall sam.c -o sam -std=c99`
+`gcc -Wall -o sam -std=c99 -mlzcnt sam.c`
 The sam_pretty.c is ment for a more verbose output of the math behind it.
 Please note that it uses the gcc builtin function for cnz (count leading zeros) and hence will be much faster with a processor with ABM instruction set extension enabled (for the LZCNT instruction).
 
