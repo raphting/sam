@@ -43,13 +43,12 @@ int main(int argc, char *argv[]) {
 	for(int i = 1; i <= usedBits; i++) {
 		//check if leading bit is 0 or 1
 		long tmpExp = exp >> (usedBits - i);
+
+		check_overflow_mul(intermed, intermed, &intermed); 
+		intermed = intermed % mod;
+
 		if((tmpExp & 1) == 1) {
-			check_overflow_mul(intermed, intermed, &intermed); 
-			intermed = intermed % mod;
 			check_overflow_mul(intermed, myInt, &intermed);
-			intermed = intermed % mod;
-		} else {
-			check_overflow_mul(intermed, intermed, &intermed); 
 			intermed = intermed % mod;
 		}
 	}
